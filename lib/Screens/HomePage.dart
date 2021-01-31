@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   List newsList = List();
 
   bool isLoading;
+  Timer _timer;
 
   final List<Color> getColors = [
     Color.fromRGBO(255, 125, 93, 1),
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   Random _rand = Random();
 
   void changeColor() {
-    Timer.periodic(Duration(seconds: 20), (s) {
+    _timer = Timer.periodic(Duration(seconds: 20), (s) {
       setState(() {
         _backgroundColor = getColors[_rand.nextInt(getColors.length)];
       });
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    changeColor();
+    _timer.cancel();
     super.dispose();
   }
 
