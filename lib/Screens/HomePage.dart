@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         _backgroundColor = getColors[_rand.nextInt(getColors.length)];
       });
     });
-    //changeColor();
+    
   }
 
   @override

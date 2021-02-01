@@ -3,7 +3,7 @@ import 'dart:convert';
 
 class Network {
   final String _url =
-      "http://newsapi.org/v2/everything?q=tesla&from=2020-12-29&sortBy=publishedAt&apiKey=8ec588cc35214f56a291d99025b7eeff";
+      "http://newsapi.org/v2/everything?domains=wsj.com&apiKey=8ec588cc35214f56a291d99025b7eeff";
 
   Future<List> getNewsFeed(String url) async {
     Map<String, dynamic> _map = {};
